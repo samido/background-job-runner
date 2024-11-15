@@ -94,7 +94,7 @@ Copy code
 Explain how to use the job runner.
 
 #### **Run Jobs Using the Helper**
-```markdown
+```
 ## How to Use
 
 ### Running a Job Programmatically
@@ -114,7 +114,7 @@ ruby
 Copy code
 
 #### **Retry Mechanism**
-```markdown
+```
 ### Retry Mechanism
 If a job fails, the system will retry up to the configured number of attempts in `config/background_jobs.php`:
 ```php
@@ -124,15 +124,14 @@ bash
 Copy code
 
 #### **Logging**
-```markdown
+```
 ### Logging
 - Successful jobs are logged in `storage/logs/background_jobs.log`.
 - Failed jobs are logged in `storage/logs/background_jobs_errors.log`.
 5. Security
 Highlight the security mechanisms in place.
 
-markdown
-Copy code
+
 ## Security
 
 - Only pre-approved classes can be executed as jobs.
@@ -141,8 +140,7 @@ Copy code
 6. Advanced Features
 Explain any advanced features, such as job priority or delays.
 
-markdown
-Copy code
+
 ## Advanced Features
 
 ### Job Delays
