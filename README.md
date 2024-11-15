@@ -211,20 +211,44 @@ project-root/
                 └── background_jobs_errors.log # Error log file 
             └── composer.json # Add global helper autoload
 
-Copy code
-9. Contributing
-Add a section for contributions if applicable.
+### Dashboard:
 
-markdown
-Copy code
-## Contributing
+## Web-Based Dashboard
 
-Contributions are welcome! Please fork this repository and submit a pull request.
-10. License
-Specify the license for your project.
+The web-based dashboard provides a user-friendly interface for managing background jobs.
 
-markdown
-Copy code
-## License
+### Features:
+- View job logs and error logs.
+- Clear logs directly from the interface.
 
-This project is licensed under the MIT License.
+### Access:
+Visit `/dashboard` in your application to view the logs.
+
+
+### Job Delays:
+
+## Job Delays
+
+You can specify a delay (in seconds) before executing a job:
+```php
+runBackgroundJob(App\BackgroundJobs\ExampleJob::class, 'execute', ['Sample Data'], $delay = 10);
+
+
+### Job Priority:
+```markdown
+## Job Priority
+
+Define jobs with priorities (higher priority jobs run first):
+```php
+$jobs = [
+    ['className' => App\BackgroundJobs\ExampleJob::class, 'methodName' => 'execute', 'params' => ['High Priority'], 'priority' => 3],
+    ['className' => App\BackgroundJobs\ExampleJob::class, 'methodName' => 'execute', 'params' => ['Low Priority'], 'priority' => 1],
+];
+$runner->runWithPriority($jobs);
+
+
+
+---
+
+These enhancements provide a robust, user-friendly system with advanced functionality. Let me know if you need further assistance! 😊
+

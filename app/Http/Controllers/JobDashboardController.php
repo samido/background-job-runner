@@ -2,15 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\BackgroundJobs\ExampleJob;
+use Illuminate\Support\Facades\File;
 
 class JobDashboardController extends Controller
 {
-    public function runJob()
+    public function index()
     {
-        // Trigger the background job
-        runBackgroundJob(ExampleJob::class, ['data' => 'Sample Data']);
+        return view('dashboard.index', [
+            'jobLogs' => [],
+            'errorLogs' => [],
+        ]);
+    }
 
-        return response()->json(['message' => 'Background job executed!']);
+    public function clearLogs()
+    {
+        return redirect()->route('dashboard.index');
     }
 }

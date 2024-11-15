@@ -1,7 +1,7 @@
 <?php
+use App\Http\Controllers\JobDashboardController;
 
-use Illuminate\Support\Facades\Route;
-
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware(['web'])->group(function () {
+    Route::get('/dashboard', [JobDashboardController::class, 'index'])->name('dashboard.index');
+    Route::post('/dashboard/clear-logs', [JobDashboardController::class, 'clearLogs'])->name('dashboard.clear-logs');
 });
