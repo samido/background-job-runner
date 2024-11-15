@@ -195,7 +195,22 @@ Include an overview of the project structure.
 ```markdown
 ## File Structure
 
-project-root/ ├── app/ │ ├── BackgroundJobs/ │ │ ├── BaseJobRunner.php # Base class for background jobs │ │ ├── JobInterface.php # Interface for background jobs │ │ ├── JobRunner.php # Handles job execution │ │ ├── ApprovedJobList.php # Stores approved jobs │ │ └── Exceptions/ │ └── JobExecutionException.php # Custom exception for job failures ├── scripts/ │ └── background-job-runner.php # Standalone PHP script for background execution ├── config/ │ └── background_jobs.php # Configuration file for retries and delays ├── storage/logs/ │ └── background_jobs.log # General log file │ └── background_jobs_errors.log # Error log file └── composer.json # Add global helper autoload
+project-root/ 
+    ├── app/ │ 
+        ├── BackgroundJobs/ │ 
+            │ ├── BaseJobRunner.php # Base class for background jobs │
+            │ ├── JobInterface.php # Interface for background jobs │ 
+            │ ├── JobRunner.php # Handles job execution │ 
+            │ ├── ApprovedJobList.php # Stores approved jobs │
+            │ └── Exceptions/ │ 
+           └── JobExecutionException.php # Custom exception for job failures
+            ├── scripts/ │ 
+                └── background-job-runner.php # Standalone PHP script for background execution 
+            ├── config/ │ 
+                └── background_jobs.php # Configuration file for retries and delays 
+            ├── storage/logs/ │ └── background_jobs.log # General log file │
+             └── background_jobs_errors.log # Error log file 
+             └── composer.json # Add global helper autoload
 
 Copy code
 9. Contributing
