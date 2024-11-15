@@ -205,12 +205,13 @@ project-root/
             │ └── Exceptions/ │ 
             |     └── JobExecutionException.php # Custom exception for job failures
             ├── scripts/ │ 
-             └── background-job-runner.php # Standalone PHP script for background execution 
+                └── background-job-runner.php # Standalone PHP script for background execution 
             ├── config/ │ 
                 └── background_jobs.php # Configuration file for retries and delays 
-            ├── storage/logs/ │ └── background_jobs.log # General log file │
+            ├── storage/logs/ │ 
+                └── background_jobs.log # General log file │
                 └── background_jobs_errors.log # Error log file 
-                └── composer.json # Add global helper autoload
+            └── composer.json # Add global helper autoload
 
 Copy code
 9. Contributing
