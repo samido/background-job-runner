@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\BackgroundJobs\ExampleJob;
 
-class JobDashboardController extends Controller
+class JobController extends Controller
 {
     public function runJob()
     {

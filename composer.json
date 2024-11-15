@@ -19,6 +19,15 @@
         "phpunit/phpunit": "^11.0.1"
     },
     "autoload": {
+        "exclude-from-classmap": [
+            "vendor/league/flysystem-local",
+             "vendor/laravel/pint/app/Providers/AppServiceProvider.php",
+             "vendor/league/flysystem-local",
+             "vendor/laravel/pint/app"
+        ],
+        "files": [
+            "app/Helpers/BackgroundJobHelper.php"
+        ],
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",

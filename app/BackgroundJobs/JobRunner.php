@@ -3,21 +3,17 @@
 namespace App\BackgroundJobs;
 
 use App\Exceptions\JobExecutionException;
+use Illuminate\Support\Facades\Log;
 
 class JobRunner
 {
-    /**
-     * Execute a background job.
-     *
-     * @param string $className Fully qualified class name of the job.
-     * @param array $params Parameters to pass to the job constructor or execute method.
-     * @return void
-     * @throws JobExecutionException
-     */
-    public function run(string $className, array $params = []): void
+    public function run(string $className, string $methodName, array $params = []): void
     {
         try {
-            // Ensure the class implements JobInterface
+            if (!in_array($className, ApprovedJobList::getApprovedJobs())) {
+                throw new \InvalidArgumentException("Unauthorized job class: {$className}");
+            }
+
             if (!class_exists($className)) {
                 throw new \InvalidArgumentException("Class {$className} does not exist.");
             }
@@ -28,15 +24,19 @@ class JobRunner
                 throw new \InvalidArgumentException("Class {$className} must implement JobInterface.");
             }
 
-            // Execute the job
-            $job->execute();
+            if (!method_exists($job, $methodName)) {
+                throw new \InvalidArgumentException("Method {$methodName} does not exist.");
+            }
+
+            $job->{$methodName}();
+
+            Log::channel('background_jobs')->info("Job executed successfully: {$className}::{$methodName}");
         } catch (\Throwable $e) {
-            // Log and rethrow as a JobExecutionException
-            throw new JobExecutionException(
-                "Failed to execute job: {$className}",
-                0,
-                $e
-            );
+            Log::channel('background_jobs_errors')->error("Job execution failed: {$className}::{$methodName}", [
+                'error' => $e->getMessage(),
+            ]);
+
+            throw new JobExecutionException("Failed to execute job: {$className}::{$methodName}", 0, $e);
         }
     }
 }
