@@ -129,9 +129,8 @@ High-priority jobs can be executed before lower-priority ones by customizing the
 
 ---
 
-### **7. Troubleshooting**
-Provide solutions for common issues.
-## Troubleshooting
+## **7. Troubleshooting**
+Providing solutions for common issues.
 
 ### Common Issues
 
