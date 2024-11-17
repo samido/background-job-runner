@@ -125,14 +125,11 @@ You can delay job execution by specifying a delay in the `config/background_jobs
 Job Priority
 High-priority jobs can be executed before lower-priority ones by customizing the runner logic in JobRunner.php.
 
-yaml
-Copy code
 
 ---
 
 ### **7. Troubleshooting**
 Provide solutions for common issues.
-```markdown
 ## Troubleshooting
 
 ### Common Issues
@@ -141,9 +138,9 @@ Provide solutions for common issues.
    If you encounter errors related to autoloading, ensure:
    - The file paths and namespaces comply with PSR-4.
    - Run:
-     ```bash
-     composer dump-autoload
-     ```
+   ```bash
+   composer dump-autoload
+     
 
 2. **Permission Denied**
    Ensure the `storage` and `vendor` directories have the correct permissions:
@@ -151,21 +148,19 @@ Provide solutions for common issues.
    chmod -R 775 storage vendor
 Missing Dependencies Ensure required PHP extensions are installed:
 
-bash
-Copy code
+```php
 php -m
+```
 Look for pdo_sqlite, mbstring, openssl, and fileinfo.
 
 Job Execution Fails Check the error logs at storage/logs/background_jobs_errors.log.
 
-yaml
-Copy code
 
 ---
 
 ### **8. File Structure**
 Include an overview of the project structure.
-```markdown
+
 ## File Structure
 
 project-root/ 
@@ -207,10 +202,10 @@ Visit `/dashboard` in your application to view the logs.
 You can specify a delay (in seconds) before executing a job:
 ```php
 runBackgroundJob(App\BackgroundJobs\ExampleJob::class, 'execute', ['Sample Data'], $delay = 10);
-
+```
 
 ### Job Priority:
-```markdown
+
 ## Job Priority
 
 Define jobs with priorities (higher priority jobs run first):
@@ -221,7 +216,7 @@ $jobs = [
 ];
 $runner->runWithPriority($jobs);
 
-
+```
 
 ---
 
