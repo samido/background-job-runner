@@ -33,17 +33,13 @@ Key Features:
     ```bash
     composer install
 
-3. Set up your environment:
+3. Set up your environment: Copy the example .env file:
+   ```bash
+   cp .env.example .env
 
-    i. Copy the example .env file:
-       ```bash
-       cp .env.example .env
-
-4. Configure the database and other environment variables in .env.
-
-    i. Generate the application key:
-       ```bash
-       php artisan key:generate
+4. Configure the database and other environment variables in .env.  Generate the application key:
+   ```bash
+   php artisan key:generate
 
 5. Run database migrations:
    ```bash
