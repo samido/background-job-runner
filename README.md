@@ -162,7 +162,7 @@ Job Execution Fails Check the error logs at storage/logs/background_jobs_errors.
 Include an overview of the project structure.
 
 ## File Structure
-
+```php
 project-root/ 
     ├── app/ │ 
         ├── BackgroundJobs/ │ 
@@ -180,6 +180,8 @@ project-root/
                 └── background_jobs.log # General log file │
                 └── background_jobs_errors.log # Error log file 
             └── composer.json # Add global helper autoload
+
+```
 
 ### Dashboard:
 
@@ -220,5 +222,5 @@ $runner->runWithPriority($jobs);
 
 ---
 
-These enhancements provide a robust, user-friendly system with advanced functionality. Let me know if you need further assistance! 😊
+These implementation provide a robust, user-friendly system with advanced functionality. Let me know if you need further assistance! Sam.Rabophala@gmail.com  |  +27 73 213 7605 😊
 
