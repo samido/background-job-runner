@@ -119,3 +119,7 @@
 [2024-11-17 08:33:13] local.INFO: Finished ExampleJob execution.  
 [2024-11-17 08:33:14] local.INFO: Executing job with data: Sample Data  
 [2024-11-17 08:33:14] local.INFO: Job completed successfully.  
+[2024-11-17 08:34:51] local.INFO: Executing ExampleJob with data: Sample Data  
+[2024-11-17 08:34:51] local.INFO: Finished ExampleJob execution.  
+[2024-11-17 08:34:51] local.INFO: Executing job with data: Sample Data  
+[2024-11-17 08:34:51] local.INFO: Job completed successfully.  

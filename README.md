@@ -1,8 +1,4 @@
-1. Project Overview
-Provide a brief introduction to the project.
 
-markdown
-Copy code
 # Background Job Runner for Laravel
 
 This project provides a custom system to execute PHP classes as background jobs, independent of Laravel's built-in queue system. It is designed to be scalable, error-handling capable, and easy to use.
@@ -12,11 +8,7 @@ Key Features:
 - Supports both Windows and Unix-based systems.
 - Includes retry mechanisms, detailed logging, and security validations.
 - Optional web-based dashboard for job monitoring.
-2. Requirements
-List all the prerequisites for running the project.
 
-markdown
-Copy code
 ## Requirements
 
 - PHP >= 8.0 with the following extensions:
@@ -29,64 +21,56 @@ Copy code
 - SQLite, MySQL, or other supported database
 - A web server (e.g., Apache, Nginx) or Laravel's built-in server
 - Windows or Unix-based system
-3. Installation
-Provide step-by-step instructions for setting up the project.
 
-markdown
-Copy code
 ## Installation
 
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/background-job-runner.git
    cd background-job-runner
-Install dependencies:
 
-bash
-Copy code
-composer install
-Set up your environment:
+2. Install dependencies:
+    ```bash
+    composer install
 
-Copy the example .env file:
-bash
-Copy code
-cp .env.example .env
-Configure the database and other environment variables in .env.
-Generate the application key:
+3. Set up your environment:
 
-bash
-Copy code
-php artisan key:generate
-Run database migrations:
+    i. Copy the example .env file:
+       ```bash
+       cp .env.example .env
 
-bash
-Copy code
-php artisan migrate
-Configure logging channels (optional):
+4. Configure the database and other environment variables in .env.
 
-In config/logging.php, ensure background_jobs and background_jobs_errors channels are configured.
-(Optional) Configure approved jobs:
+    i. Generate the application key:
+       ```bash
+       php artisan key:generate
 
-Add approved job classes in config/background_jobs.php:
-php
-Copy code
-'approved_jobs' => [
-    App\BackgroundJobs\ExampleJob::class,
-],
-Rebuild autoload:
+5. Run database migrations:
+   ```bash
+   php artisan migrate
 
-bash
-Copy code
-composer dump-autoload
-Test the application:
+6. Configure logging channels (optional):
 
-bash
-Copy code
-php artisan serve
-Visit http://localhost:8000 to access the application.
+    In config/logging.php, ensure background_jobs and background_jobs_errors channels are configured.
+    (Optional) Configure approved jobs:
 
-yaml
-Copy code
+7. Add approved job classes in config/background_jobs.php:
+   ```bash
+   'approved_jobs' => [
+       App\BackgroundJobs\ExampleJob::class,
+   ],
+8. Rebuild autoload:
+   ```bash
+   composer dump-autoload
+
+9. Test the application:
+   ```bash
+   php artisan serve
+
+
+10. Visit http://localhost:8000 to access the application.
+
+
 
 ---
 
