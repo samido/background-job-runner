@@ -123,6 +123,7 @@ You can delay job execution by specifying a delay in the `config/background_jobs
 ```php
 'delay' => 10, // Delay in seconds
 Job Priority
+```
 High-priority jobs can be executed before lower-priority ones by customizing the runner logic in JobRunner.php.
 
 
@@ -138,9 +139,9 @@ Provide solutions for common issues.
    If you encounter errors related to autoloading, ensure:
    - The file paths and namespaces comply with PSR-4.
    - Run:
-   ```bash
-   composer dump-autoload
-     
+```bash
+composer dump-autoload
+```    
 
 2. **Permission Denied**
    Ensure the `storage` and `vendor` directories have the correct permissions:
