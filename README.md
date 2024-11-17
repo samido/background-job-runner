@@ -71,10 +71,9 @@ Key Features:
 ---
 
 ### **4. How to Use**
-Explain how to use the job runner.
 
 #### **Run Jobs Using the Helper**
-```
+
 ## How to Use
 
 ### Running a Job Programmatically
@@ -84,14 +83,12 @@ Use the `runBackgroundJob` helper to execute a job:
 use App\BackgroundJobs\ExampleJob;
 
 runBackgroundJob(ExampleJob::class, 'execute', ['Sample Data']);
-Run Jobs Using the Standalone Script
+```
+### Run Jobs Using the Standalone Script
 You can also execute jobs from the command line:
 
-bash
-Copy code
+```php
 php scripts/background-job-runner.php App\BackgroundJobs\ExampleJob execute "Sample Data"
-ruby
-Copy code
 
 #### **Retry Mechanism**
 ```
@@ -100,8 +97,6 @@ If a job fails, the system will retry up to the configured number of attempts in
 ```php
 'retries' => 3,  // Number of retry attempts
 'delay' => 5,    // Delay in seconds between retries
-bash
-Copy code
 
 #### **Logging**
 ```
